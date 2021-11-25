@@ -2,14 +2,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.util.*;
 //list avec les figures et couleurs et on boucle dessus
 // switch case est une occasion rate d'utilisé l'heritage en une ligne bouton action action est une methode ajouter au bouton drawpanel est dans le constructeur du bouton
 public class Window extends JFrame implements ActionListener {
     Drawing draw = new Drawing();
 
+
     public Window(String Title, int x, int y) {
         super(Title);
+        ArrayList Button = new ArrayList( Arrays.asList("BLACK", "RED", "GREEN","BLUE"));
         this.setSize(x, y);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,11 +36,11 @@ public class Window extends JFrame implements ActionListener {
         JPanel southPanel = new JPanel();
         southPanel.setLayout(new GridLayout(2, 6));
 
-        JButton Noir = new JButton("Black");
-        Noir.setBackground(Color.BLACK);
-        southPanel.add(Noir);
-        Noir.addActionListener(this);
-        Noir.setForeground(Color.white);
+        JButton Black = new JButton("Black");
+        Black.setBackground(Color.BLACK);
+        southPanel.add(Black);
+        Black.addActionListener(this);
+        Black.setForeground(Color.white);
 
 
         JButton Rouge = new JButton("Red");
