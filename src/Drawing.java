@@ -42,24 +42,20 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
             case "Ellipse":
                 System.out.println("you are creating a ");
                 figure = new Ellipse(x1.getX(), x1.getY(), c);
-                liste.add(figure);
                 break;
             case "Rectangle":
                 System.out.println("you are creating a ");
                 figure = new Rectangle(x1.getX(), x1.getY(), c);
-                liste.add(figure);
                 break;
             case "Carre":
                 figure = new Square(x1.getX(), x1.getY(), c);
-                liste.add(figure);
                 break;
 
             case "Circle":
                 figure = new Circle(x1.getX(), x1.getY(), c);
-                liste.add(figure);
-                System.out.println("you are creating a " + NewFigure + " of color " + c + " qdsfgh,uyi;uoiytrhegf: " + x1.x + " " + x1.y);
                 break;
         }
+        liste.add(figure);
 
 }
     @Override

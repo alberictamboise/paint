@@ -182,12 +182,10 @@ public class Window extends JFrame implements ActionListener {
                 if(selected==JFileChooser.APPROVE_OPTION){
                     String fileToSave = choosersave.getSelectedFile().getAbsolutePath();
                     draw.save(fileToSave);
-                    System.out.println("fichier sauvegardé");
+                    System.out.println("saved file");
                 } else{
-                    System.out.println("fichier sauvegardé");;
+                    System.out.println("failed to saved file");;
                 }
-                System.out.println();
-                System.out.println("fichier sauvegarder");
                 break;
                 case "Open":
                 JFileChooser chooseropen = new JFileChooser();
@@ -195,9 +193,9 @@ public class Window extends JFrame implements ActionListener {
                  if(selected2==JFileChooser.APPROVE_OPTION){
                  String fileToOpen = chooseropen.getSelectedFile().getAbsolutePath();
                  draw.read(fileToOpen);
-            System.out.println("fichier ouvert");
+            System.out.println("file open");
         } else{
-            System.out.println("fichier pas ouvert ");;
+            System.out.println("file not open ");;
         }
 
 
