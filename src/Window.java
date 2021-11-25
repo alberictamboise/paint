@@ -124,57 +124,42 @@ public class Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
         switch (cmd) {
-
-
             case "Red":
-                System.out.println("The color"+cmd+"has been chosen");
+                System.out.println("The color "+cmd+" has been chosen");
                 draw.setColor(Color.RED);
                 break;
             case "Black":
-                System.out.println("The color"+cmd+"has been chosen");
+                System.out.println("The color "+cmd+" has been chosen");
                 draw.setColor(Color.black);
                 break;
             case "Green":
-                System.out.println("The color"+cmd+"has been chosen");
+                System.out.println("The color "+cmd+" has been chosen");
                 draw.setColor(Color.green);
                 break;
             case "Blue":
-                System.out.println("The color"+cmd+"has been chosen");
+                System.out.println("The color "+cmd+" has been chosen");
                 draw.setColor(Color.blue);
                 break;
-            case "Ellipse":
-                System.out.println("The figure"+cmd+"has been chosen");
-                draw.setNewFigure("Ellipse");
-
-                break;
             case "Yellow":
-                System.out.println("The color"+cmd+"has been chosen");
+                System.out.println("The color "+cmd+" has been chosen");
                 draw.setColor(Color.yellow);
                 break;
             case "Pink":
-                System.out.println("The color"+cmd+"has been chosen");
+                System.out.println("The color "+cmd+" has been chosen");
                 draw.setColor(Color.pink);
                 break;
             case "Magenta":
-                System.out.println("The color"+cmd+"has been chosen");;
+                System.out.println("The color "+cmd+" has been chosen");;
                 draw.setColor(Color.magenta);
                 break;
             case "Orange":
-                System.out.println("The color"+cmd+"has been chosen");
+                System.out.println("The color "+cmd+" has been chosen");
                 draw.setColor(Color.orange);
                 break;
 
-            case "Rectangle":
-                System.out.println("The figure"+cmd+"has been chosen");
-                draw.setNewFigure("Rectangle");
-                break;
-            case "Carre":
-                System.out.println("The figure"+cmd+"has been chosen");
-                draw.setNewFigure("Carre");
-                break;
-            case "Circle":
-                System.out.println("The figure"+cmd+"has been chosen");
-                draw.setNewFigure("Circle");
+            case "Rectangle","Carre","Circle","Ellipse":
+                System.out.println("The figure "+cmd+" has been chosen");
+                draw.setNewFigure(cmd);
                 break;
             case "Save":
                 JFileChooser choosersave = new JFileChooser();
