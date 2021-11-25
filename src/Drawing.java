@@ -26,37 +26,20 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
         liste.add(new Rectangle(0, 0, Color.BLACK));
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
-
-
     }
-
     public void setColor(Color c) {
         this.c = c;
     }
-
     public void setNewFigure(String NewFigure) {
         this.NewFigure = NewFigure;
     }
-
     @Override
-    public void mouseClicked(MouseEvent e) {
-
-    }
-
+    public void mouseClicked(MouseEvent e) {}
     @Override
     public void mousePressed(MouseEvent e) {
         x1 = new Point(e.getX(), e.getY());
-        //   if (NewFigure == "Ellipse") {
-
-        //        System.out.println("Creation d'une" + NewFigure + "de couleur " + c + " et d'origine: " + x1.x + " " + x1.y);
-        //   } else if (NewFigure != "Ellipse") {
-        //       System.out.println("Creation d'un " + NewFigure + " de couleur " + c + " et d'origine: " + x1.x + " " + x1.y);
-        //   }
-
-
         switch (NewFigure) {
             case "Ellipse":
-                //liste.add(new Ellipse(x1, x2, c));
                 figure = new Ellipse(x1.getX(), x1.getY(), c);
                 liste.add(figure);
                 break;
@@ -67,54 +50,32 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
 
                 break;
             case "Carre":
-                // liste.add(new Square(x, y, c));
                 figure = new Square(x1.getX(), x1.getY(), c);
                 liste.add(figure);
                 break;
 
             case "Circle":
-                //liste.add(new Circle(x, y, c));
                 figure = new Circle(x1.getX(), x1.getY(), c);
                 liste.add(figure);
                 break;
-
-            //  }
-
-
         }
         System.out.println("Creation d'une" + NewFigure + "de couleur " + c + " et d'origine: " + x1.x + " " + x1.y);
-    }
-
-
+}
     @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
+    public void mouseReleased(MouseEvent e) {}
     @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
+    public void mouseEntered(MouseEvent e) {}
     @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
-
+    public void mouseExited(MouseEvent e) {}
     @Override
     public void mouseDragged(MouseEvent e) {
-        //on appuie sur un bouton
         x2 = new Point(e.getX(), e.getY());
         System.out.println("Creation d'un " + NewFigure + " de couleur " + c + " et de second point : " + x2.x + " " + x2.y);
         figure.setBoundingBox(x1, x2);
         repaint();
-
     }
-
     @Override
-    public void mouseMoved(MouseEvent e) {
-// pas de bouton enfoncé
-    }
+    public void mouseMoved(MouseEvent e) {}
 
     @Override
     protected void paintComponent(Graphics g) {

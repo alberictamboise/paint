@@ -3,37 +3,27 @@ import java.awt.*;
 public class Square extends Rectangle {
 
     public Square(int px, int py, Color c) {
-        super(px,py,c);
+        super(px, py, c);
         setBoundingBox(0, 0);
     }
 
     @Override
-    public void draw(Graphics g) {
-        if(height>width){
-            g.setColor(c);
-            g.fillRect(x1.getX(), x1.getY(), width, width);
-        }else{
-            g.setColor(c);
-            g.fillRect(x1.getX(), x1.getY(), height,height );
+    public void setBoundingBox(Point origin, Point endOfBox) {
+        super.setBoundingBox(origin, endOfBox);
+        if (width < height) {
+            height = width;
+            if (endOfBox.getX() < origin.getX() & endOfBox.getY() < origin.getY()) {
+                super.x1.setY(origin.getY() - height);
+            } else if (origin.getX() < endOfBox.getX() & endOfBox.getY() < origin.getY()) {
+                super.x1.setY(origin.getY() - height);
+            }
+        } else {
+            width = height;
+            if (endOfBox.getX() < origin.getX() & endOfBox.getY() < origin.getY()) {
+                super.x1.setX(origin.getX() - width);
+            } else if (endOfBox.getX() < origin.getX() & origin.getY() < endOfBox.getY()) {
+                super.x1.setX(origin.getX() - width);
+            }
         }
-
-
-    }
-
-    @Override
-    public String toString() {
-        return ("Creation d un cercle d'origine" + x1 + " et de couleur" + c);
-    }
-
-
-    @Override
-    public Color getC() {
-        return super.getC();
-    }
-
-    @Override
-    public void setC(Color c) {
-        super.setC(c);
-
     }
 }

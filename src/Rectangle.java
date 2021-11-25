@@ -1,3 +1,7 @@
+
+
+
+
 import java.awt.*;
 
 public class Rectangle extends Figure {
@@ -25,63 +29,37 @@ public class Rectangle extends Figure {
 
         Point fin = new Point();
 
-        if (x1.getX() < x2.getX() & x2.getY() > x1.getY()) { // tire en bas à droite
-            Point originBis = new Point(x1.getX(), x1.getY());
-            Point secondBis = new Point(x2.getX(), x2.getY());
-            width = (secondBis.getX() - originBis.getX());
-            height = (secondBis.getY() - originBis.getY());
-        } else if (x2.getX() < x1.getX() & x2.getY() < x1.getY()) { // tire en haut à gauche
-            Point originBis = new Point(x2.getX(), x2.getY());
-            Point secondBis = new Point(x1.getX(), x1.getY());
-            super.x1 = originBis;
-            width = (secondBis.getX() - originBis.getX());
-            height = (secondBis.getY() - originBis.getY());
-
-
-
-        }else if (x1.getX() < x2.getX() & x2.getY() < x1.getY()) { // tire en haut à gauche
-            Point originBis = new Point(x1.getX(), x2.getY());
-            Point secondBis = new Point(x2.getX(), x1.getY());
-            super.x1 = originBis;
-            width = (secondBis.getX() - originBis.getX());
-            height = (secondBis.getY() - originBis.getY());
+        if (x1.getX() < x2.getX() & x2.getY() > x1.getY()) {
+            Point newOrigin = new Point(x1.getX(), x1.getY());
+            Point endOfLine = new Point(x2.getX(), x2.getY());
+            height = (endOfLine.getY() - newOrigin.getY());
+            width = (endOfLine.getX() - newOrigin.getX());
         }
-        else if (x1.getX() > x2.getX() & x1.getY() < x2.getY()) { // tire en bas à gauche
-            Point originBis = new Point(x2.getX(), x1.getY());
-            Point secondBis = new Point(x1.getX(), x2.getY());
-            super.x1 = originBis;
-            width = (secondBis.getX() - originBis.getX());
-            height = (secondBis.getY() - originBis.getY());
+             else if (x1.getX() > x2.getX() & x1.getY() < x2.getY()) {
+                Point newOrigin = new Point(x2.getX(), x1.getY());
+                Point endOfLine = new Point(x1.getX(), x2.getY());
+                super.x1 = newOrigin;
+                height = (endOfLine.getY() - newOrigin.getY());
+                width = (endOfLine.getX() - newOrigin.getX());
+            }
+         else if (x2.getX() < x1.getX() & x2.getY() < x1.getY()) {
+            Point newOrigin = new Point(x2.getX(), x2.getY());
+            Point endOfLine = new Point(x1.getX(), x1.getY());
+            super.x1 = newOrigin;
+            height = (endOfLine.getY() - newOrigin.getY());
+            width = (endOfLine.getX() - newOrigin.getX());
+        }else if (x1.getX() < x2.getX() & x2.getY() < x1.getY()) {
+            Point newOrigin = new Point(x1.getX(), x2.getY());
+            Point endOfLine = new Point(x2.getX(), x1.getY());
+            super.x1 = newOrigin;
+            height = (endOfLine.getY() - newOrigin.getY());
+            width = (endOfLine.getX() - newOrigin.getX());
         }
-
 
     }
-
     @Override
     public void draw(Graphics g) {
-
-
         g.setColor(c);
         g.fillRect(x1.getX(), x1.getY(), width, height);
-
     }
-
-    @Override
-    public String toString() {
-        return ("Creation d un cercle d'origine" + x1 + " et de couleur" + c);
-    }
-
-
-    @Override
-    public Color getC() {
-        return super.getC();
-    }
-
-    @Override
-    public void setC(Color c) {
-        super.setC(c);
-
-    }
-
-
 }
