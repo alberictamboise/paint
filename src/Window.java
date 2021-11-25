@@ -13,12 +13,8 @@ public class Window extends JFrame implements ActionListener {
         this.setSize(x, y);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         Container contentPanel = this.getContentPane();
-
         JMenuBar m = new JMenuBar();
-
-
         JMenu menu1 = new JMenu("File");
         JMenuItem open = new JMenuItem("Open");
         menu1.add(open);
@@ -28,16 +24,12 @@ public class Window extends JFrame implements ActionListener {
         JMenuItem save = new JMenuItem("Save");
         menu1.add(save);
         save.addActionListener(this);
-
         JMenuItem quit = new JMenuItem("Quit");
         menu1.add(quit);
         m.add(menu1);
-
-
         JMenu menu2 = new JMenu("About");
         m.add(menu2);
         this.setJMenuBar(m);
-
 
         JPanel southPanel = new JPanel();
         southPanel.setLayout(new GridLayout(2, 6));

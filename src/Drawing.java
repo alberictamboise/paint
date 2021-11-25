@@ -18,7 +18,6 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
     Figure figure;
     private Point x1;
     private Point x2;
-
     public Drawing() {
         this.x = 0;
         this.y = 0;
