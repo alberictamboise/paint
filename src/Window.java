@@ -34,7 +34,7 @@ public class Window extends JFrame implements ActionListener {
         m.add(menu1);
 
 
-        JMenu menu2 = new JMenu("A Propos");
+        JMenu menu2 = new JMenu("About");
         m.add(menu2);
         this.setJMenuBar(m);
 
@@ -42,24 +42,24 @@ public class Window extends JFrame implements ActionListener {
         JPanel southPanel = new JPanel();
         southPanel.setLayout(new GridLayout(2, 6));
 
-        JButton Noir = new JButton("Noir");
+        JButton Noir = new JButton("Black");
         Noir.setBackground(Color.BLACK);
         southPanel.add(Noir);
         Noir.addActionListener(this);
         Noir.setForeground(Color.white);
 
 
-        JButton Rouge = new JButton("Rouge");
+        JButton Rouge = new JButton("Red");
         Rouge.setBackground(Color.RED);
         southPanel.add(Rouge);
         Rouge.addActionListener(this);
 
-        JButton Vert = new JButton("Vert");
+        JButton Vert = new JButton("Green");
         Vert.setBackground(Color.green);
         southPanel.add(Vert);
         Vert.addActionListener(this);
 
-        JButton Bleu = new JButton("Bleu");
+        JButton Bleu = new JButton("Blue");
         Bleu.setBackground(Color.BLUE);
         southPanel.add(Bleu);
         Bleu.addActionListener(this);
@@ -74,13 +74,13 @@ public class Window extends JFrame implements ActionListener {
         southPanel.add(Circle);
         Circle.addActionListener(this);
 
-        JButton Yellow = new JButton("Jaune");
+        JButton Yellow = new JButton("Yellow");
         southPanel.add(Yellow);
         Yellow.setBackground(Color.YELLOW);
         Yellow.addActionListener(this);
 
 
-        JButton Pink = new JButton("Rose");
+        JButton Pink = new JButton("Pink");
         southPanel.add(Pink);
         Pink.setBackground(Color.PINK);
         Pink.addActionListener(this);
@@ -126,54 +126,54 @@ public class Window extends JFrame implements ActionListener {
         switch (cmd) {
 
 
-            case "Rouge":
-                System.out.println("la couleur  rouge est choisie");
+            case "Red":
+                System.out.println("The color"+cmd+"has been chosen");
                 draw.setColor(Color.RED);
                 break;
-            case "Noir":
-                System.out.println("Le couleur  noir est choisi");
+            case "Black":
+                System.out.println("The color"+cmd+"has been chosen");
                 draw.setColor(Color.black);
                 break;
-            case "Vert":
-                System.out.println("Vert");
+            case "Green":
+                System.out.println("The color"+cmd+"has been chosen");
                 draw.setColor(Color.green);
                 break;
-            case "Bleu":
-                System.out.println("la couleur bleu est choisie");
+            case "Blue":
+                System.out.println("The color"+cmd+"has been chosen");
                 draw.setColor(Color.blue);
                 break;
             case "Ellipse":
-                System.out.println("création d'une éllipse");
+                System.out.println("The figure"+cmd+"has been chosen");
                 draw.setNewFigure("Ellipse");
 
                 break;
-            case "Jaune":
-                System.out.println("La couleur jaune est choisi");
+            case "Yellow":
+                System.out.println("The color"+cmd+"has been chosen");
                 draw.setColor(Color.yellow);
                 break;
-            case "Rose":
-                System.out.println("La couleur rose est choisi");
+            case "Pink":
+                System.out.println("The color"+cmd+"has been chosen");
                 draw.setColor(Color.pink);
                 break;
             case "Magenta":
-                System.out.println("La couleur magenta est choisi");
+                System.out.println("The color"+cmd+"has been chosen");;
                 draw.setColor(Color.magenta);
                 break;
             case "Orange":
-                System.out.println("La couleur orange est choisi");
+                System.out.println("The color"+cmd+"has been chosen");
                 draw.setColor(Color.orange);
                 break;
 
             case "Rectangle":
-                System.out.println("création d'un rectangle");
+                System.out.println("The figure"+cmd+"has been chosen");
                 draw.setNewFigure("Rectangle");
                 break;
             case "Carre":
-                System.out.println("création d'un carré");
+                System.out.println("The figure"+cmd+"has been chosen");
                 draw.setNewFigure("Carre");
                 break;
             case "Circle":
-                System.out.println("création d'un cercle");
+                System.out.println("The figure"+cmd+"has been chosen");
                 draw.setNewFigure("Circle");
                 break;
             case "Save":
@@ -184,7 +184,7 @@ public class Window extends JFrame implements ActionListener {
                     draw.save(fileToSave);
                     System.out.println("saved file");
                 } else{
-                    System.out.println("failed to saved file");;
+                    System.out.println("failed to saved file");
                 }
                 break;
                 case "Open":
@@ -195,7 +195,7 @@ public class Window extends JFrame implements ActionListener {
                  draw.read(fileToOpen);
             System.out.println("file open");
         } else{
-            System.out.println("file not open ");;
+            System.out.println("file not open ");
         }
 
 

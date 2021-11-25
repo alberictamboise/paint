@@ -40,11 +40,9 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
         x1 = new Point(e.getX(), e.getY());
         switch (NewFigure) {
             case "Ellipse":
-                System.out.println("you are creating a ");
                 figure = new Ellipse(x1.getX(), x1.getY(), c);
                 break;
             case "Rectangle":
-                System.out.println("you are creating a ");
                 figure = new Rectangle(x1.getX(), x1.getY(), c);
                 break;
             case "Carre":
