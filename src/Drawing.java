@@ -10,11 +10,11 @@ import java.util.ArrayList;
 //mouse released ne sert pas , p
 
 public class Drawing extends JPanel implements MouseListener, MouseMotionListener, Serializable {
-    public Color c;
-    public ArrayList<Figure> liste = new ArrayList<>();
-    public int x;
-    public int y;
-    public String NewFigure;
+    private Color c;
+    private ArrayList<Figure> liste = new ArrayList<>();
+    private int x;
+    private int y;
+    private String NewFigure;
     Figure figure;
     private Point x1;
     private Point x2;
@@ -83,7 +83,6 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
         this.setBackground(Color.white);
         for (Figure f : liste) {
             f.draw(g);
-           //repaint appel paint componente this.repaint() il faut mettre les variables en privé et la largeur et la hauteur en protected ;
         }
     }
 public void save(String fileName) {

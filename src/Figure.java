@@ -3,7 +3,7 @@ import java.io.Serializable;
 
 public abstract class Figure implements Serializable {
 
-    public Color c;
+    protected Color c;
     protected Point x1;
 protected int height;
 protected int width;
