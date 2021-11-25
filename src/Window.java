@@ -107,11 +107,9 @@ public class Window extends JFrame implements ActionListener {
         this.setVisible(true);
 
     }
-
     public static void main(String[] args) {
         new Window("Paint", 1000, 600);
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();

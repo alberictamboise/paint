@@ -1,12 +1,9 @@
 import java.awt.*;
-
 public class Square extends Rectangle {
-
     public Square(int px, int py, Color c) {
         super(px, py, c);
         setBoundingBox(0, 0);
     }
-
     @Override
     public void setBoundingBox(Point origin, Point endOfBox) {
         super.setBoundingBox(origin, endOfBox);

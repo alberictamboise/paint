@@ -36,7 +36,6 @@ public class Ellipse extends Figure {
             width = (x2.getX() - x1.getX());
             height = (x1.getY() - x2.getY());
         }
-
     }
     @Override
     public void draw(Graphics g) {

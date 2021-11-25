@@ -1,15 +1,7 @@
-
-
-
-
 import java.awt.*;
-
 public class Rectangle extends Figure {
     protected int height;
     protected int width;
-
-
-
     public Rectangle(int px, int py, Color c) {
         super(c, new Point(px, py));
         setBoundingBox(0, 0);
@@ -19,7 +11,6 @@ public class Rectangle extends Figure {
         width = widthBB;
         height = heigthBB;
     }
-
     @Override
     public void setBoundingBox(Point x1, Point x2) {
         if (x1.getX() < x2.getX() & x2.getY() > x1.getY()) {
@@ -47,7 +38,6 @@ public class Rectangle extends Figure {
         }
 
     }
-
     @Override
     public void draw(Graphics g) {
         g.setColor(c);
