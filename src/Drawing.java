@@ -39,15 +39,10 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
     public void mousePressed(MouseEvent e) {
         x1 = new Point(e.getX(), e.getY());
         switch (NewFigure) {
-            case "Ellipse":
+            case "Ellipse","Rectangle":
+                System.out.println("you are creating a ");
                 figure = new Ellipse(x1.getX(), x1.getY(), c);
                 liste.add(figure);
-                break;
-
-            case "Rectangle":
-                figure = new Rectangle(x1.getX(), x1.getY(), c);
-                liste.add(figure);
-
                 break;
             case "Carre":
                 figure = new Square(x1.getX(), x1.getY(), c);
@@ -57,9 +52,10 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
             case "Circle":
                 figure = new Circle(x1.getX(), x1.getY(), c);
                 liste.add(figure);
+                System.out.println("you are creating a " + NewFigure + " of color " + c + " qdsfgh,uyi;uoiytrhegf: " + x1.x + " " + x1.y);
                 break;
         }
-        System.out.println("Creation d'une" + NewFigure + "de couleur " + c + " et d'origine: " + x1.x + " " + x1.y);
+
 }
     @Override
     public void mouseReleased(MouseEvent e) {}
@@ -70,7 +66,7 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
     @Override
     public void mouseDragged(MouseEvent e) {
         x2 = new Point(e.getX(), e.getY());
-        System.out.println("Creation d'un " + NewFigure + " de couleur " + c + " et de second point : " + x2.x + " " + x2.y);
+        System.out.println("you are creating a" + NewFigure + " of color " + c + " and second point  eeeee" + x2.x + " " + x2.y);
         figure.setBoundingBox(x1, x2);
         repaint();
     }
@@ -91,9 +87,9 @@ public void save(String fileName) {
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
         out.writeObject(liste);
         out.close();
-        System.out.println("\nSauvegardé avec succès...\n");
+        System.out.println("\nSuccessfully saved\n");
     } catch (Exception e) {
-        System.out.println("Problèmos");
+        System.out.println("failed to save successfully");
         e.printStackTrace();
 
     }
@@ -103,7 +99,7 @@ public void save(String fileName) {
             FileInputStream fileIn = new FileInputStream(fileName);
             ObjectInputStream in = new ObjectInputStream(fileIn);
             liste = (ArrayList<Figure>) in.readObject();
-            System.out.println("Ouvert avec succès");
+            System.out.println("Successfully open");
             in.close();
             fileIn.close();
             repaint();
