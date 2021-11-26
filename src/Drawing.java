@@ -49,7 +49,6 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
                 break;
         }
         liste.add(figure);
-
 }
     @Override
     public void mouseReleased(MouseEvent e) {}
@@ -66,7 +65,6 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
     }
     @Override
     public void mouseMoved(MouseEvent e) {}
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -85,7 +83,6 @@ public void save(String fileName) {
     } catch (Exception e) {
         System.out.println("failed to save successfully");
         e.printStackTrace();
-
     }
 }
     public void read(String fileName) {
@@ -97,8 +94,6 @@ public void save(String fileName) {
             in.close();
             fileIn.close();
             repaint();
-
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -107,7 +102,5 @@ public void save(String fileName) {
             e.printStackTrace();
         }
     }
-
-
 }
 

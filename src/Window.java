@@ -7,7 +7,6 @@ public class Window extends JFrame implements ActionListener {
     Drawing draw = new Drawing();
     public Window(String Title, int x, int y) {
         super(Title);
-        //ArrayList Button = new ArrayList( Arrays.asList("BLACK", "RED", "GREEN","BLUE"));
         this.setSize(x, y);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
