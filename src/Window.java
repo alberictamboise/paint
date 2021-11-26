@@ -3,15 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
-//list avec les figures et couleurs et on boucle dessus
-// switch case est une occasion rate d'utilisé l'heritage en une ligne bouton action action est une methode ajouter au bouton drawpanel est dans le constructeur du bouton
 public class Window extends JFrame implements ActionListener {
     Drawing draw = new Drawing();
-
-
     public Window(String Title, int x, int y) {
         super(Title);
-        ArrayList Button = new ArrayList( Arrays.asList("BLACK", "RED", "GREEN","BLUE"));
+        //ArrayList Button = new ArrayList( Arrays.asList("BLACK", "RED", "GREEN","BLUE"));
         this.setSize(x, y);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,7 +37,6 @@ public class Window extends JFrame implements ActionListener {
         southPanel.add(Black);
         Black.addActionListener(this);
         Black.setForeground(Color.white);
-
 
         JButton Rouge = new JButton("Red");
         Rouge.setBackground(Color.RED);
@@ -97,9 +92,9 @@ public class Window extends JFrame implements ActionListener {
         southPanel.add(Carre);
         Carre.addActionListener(this);
 
-        //JOptionPane info = new JOptionPane();
-        //JOptionPane.showInternalMessageDialog(info, "Bienvenue sur le paint de Albéric",
-              //  "information", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane info = new JOptionPane();
+        JOptionPane.showInternalMessageDialog(info, "Bienvenue sur le paint de Albéric",
+        "information", JOptionPane.INFORMATION_MESSAGE);
 
         contentPanel.add(southPanel, "South");
         contentPanel.add(draw);
@@ -164,18 +159,18 @@ public class Window extends JFrame implements ActionListener {
                     System.out.println("failed to saved file");
                 }
                 break;
-                case "Open":
+            case "Open":
                 JFileChooser chooseropen = new JFileChooser();
-                 int selected2 = chooseropen.showOpenDialog(this);
-                 if(selected2==JFileChooser.APPROVE_OPTION){
-                 String fileToOpen = chooseropen.getSelectedFile().getAbsolutePath();
-                 draw.read(fileToOpen);
-            System.out.println("file open");
-        } else{
-            System.out.println("file not open ");
-        }
+                int selected2 = chooseropen.showOpenDialog(this);
+                if(selected2==JFileChooser.APPROVE_OPTION){
+                    String fileToOpen = chooseropen.getSelectedFile().getAbsolutePath();
+                    draw.read(fileToOpen);
+                    System.out.println("file open");
+                } else{
+                    System.out.println("file not open ");
+                }
 
 
-    }
         }
     }
+}

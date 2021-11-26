@@ -5,10 +5,6 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.*;
 import java.util.ArrayList;
-//firstpointabscisse  si blanc fait ça pour utlisier des noms sinon utiliser des 0 et des 1  le return permet d'éviter de mettre un else
-//figure=NewElipse(liste.addfigure)
-//mouse released ne sert pas , p
-
 public class Drawing extends JPanel implements MouseListener, MouseMotionListener, Serializable {
     private Color c;
     private ArrayList<Figure> liste = new ArrayList<>();
@@ -64,7 +60,7 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
     @Override
     public void mouseDragged(MouseEvent e) {
         x2 = new Point(e.getX(), e.getY());
-        System.out.println("you are creating a" + NewFigure + " of color " + c + " and second point  eeeee" + x2.x + " " + x2.y);
+        System.out.println("you are creating a " + NewFigure + " of color " + c + " and second point  eeeee" + x2.x + " " + x2.y);
         figure.setBoundingBox(x1, x2);
         repaint();
     }
